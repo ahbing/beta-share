@@ -1,0 +1,49 @@
+<%- include header %>
+<% if(user._id == theUser._id){ %>
+
+<section class="edit-info">
+    <nav>
+      <ul id='edit-list'>
+        <li><a href="#" title="edit-username">修改用户名</a></li>
+        <li><a href="#" title='edit-password'>修改密码</a></li>
+        <li><a href="#" title='edit-header'>修改头像</a></li>
+      </ul>
+    </nav>
+    <section class="edit-tab">
+      <!-- 修改用户名 -->
+      <section id="edit-username">
+        <form action="/editusername/<%= theUser._id %>" method='POST'>
+          用户名：<input type="text" id='edit-name' name='username' required value="<%= theUser.name %>"><br/>
+          座右铭：<input type="text" name='motto' required value="<%= theUser.motto %>"><br/>
+          <input type="submit" value='确认修改'>
+        </form>
+      </section>
+      <!-- 修改密码 -->
+      <section id="edit-password">
+        <form action="/editpassword/<%= theUser._id %>" method='POST'>
+          旧的密码：<input id="edit-old-psw" type="password" name='old-password' placeholder='旧密码' required><br/>
+          新的密码：<input id='edit-new-psw' type="password" name='new-password' placeholder='新密码' required><p>密码长度不低于6位</p><br/>
+          重复密码：<input id="edit-re-new-psw" type="password" name='re-new-password' placeholder='重复密码' required>
+          <p>两次密码输入不一样</p><br/>
+          <input type="submit" value='确认修改'>
+        </form>
+      </section>
+      <section id="edit-header">
+
+        <div >
+          当前头像
+          <img class='old-header' src="<%= theUser.header %>" alt="">
+        </div><br/>
+        <div style="color:#FF3333;font-size:.9em;">你敢上传接近的正方形的帅照吗</div>
+        <form action="/updateheader/<%= theUser._id %>" method='POST' enctype='multipart/form-data'>
+          <input type="file" name='header'>
+          <input type="submit" value='上传'>
+        </form>
+      </section>
+
+    </section>
+  </section>
+<% }else{ %>
+  <div>你丫没有权限！</div>
+<% } %>
+<%- include footer %>

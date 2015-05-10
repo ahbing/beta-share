@@ -1,0 +1,27 @@
+<%- include header %>
+  <%- include reg %>
+  <%- include login %>
+<section class='user-show'>
+      <img id="imgBg" class='bg' src="<%= theUser.bg %>" alt="">
+      <% if(user._id == theUser._id){ %>
+        <a id="editBg" class='edit-bg' href="javascript:0;">
+          <input style="display:none" id="inputBg" type="file" title="<%= theUser._id%>">修改背景</a>
+      <% } %>
+      <a href="<%= theUser.url%>">
+        <img class='user-header' src="<%= theUser.header %>" alt="用户头像">
+      </a>
+      <p class='user-motto'><%= theUser.name %> : <%= theUser.motto %></p>
+  </section>
+  <section class="user-post">
+    <p class='recent-share'>近期分享</p>
+    <ul class='post-list'>
+      <% posts.forEach(function(post){ %>
+        <li>
+          <span class='post-date'><%- post.time.day%></span>
+          <span class="post-title"><a href="/page/<%- post._id%>"><%- post.title %></a></span>
+        </li>
+      <% });%>
+    </ul>
+  </section>
+  <ul id='fileList'></ul>
+<%- include footer %>

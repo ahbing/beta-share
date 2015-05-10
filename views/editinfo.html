@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ß-house 分享知识 一起进步</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src='js/main.js'></script>
+</head>
+<body>
+	<header>
+		<span class="header-left">
+			<a href="/"><img class='logo' src="images/logo.png" alt="logo"></a>
+		</span>
+		<span class='header-right'>
+			<a class='reg' href="/reg">注册</a>
+			<a class='login' href="/login">登录</a>
+
+ 			<!-- <a id='header-person' class="username" href="/person">ahbing</a> -->
+ 			<nav>
+				<ul>
+					<li><a href="/person">个人中心</a></li>
+					<li><a href="/post">发表文章</a></li>
+					<li><a href="/edit">修改信息</a></li>
+					<li><a href="/logout">登出</a></li>
+				</ul>
+			</nav>
+		</span>
+	</header>
+	<section class="edit-info">
+		<nav>
+			<ul id='edit-list'>
+				<li><a href="#" title="edit-username">修改用户名</a></li>
+				<li><a href="#" title='edit-password'>修改密码</a></li>
+				<li><a href="#" title='edit-header'>修改头像</a></li>
+			</ul>
+		</nav>
+		<section class="edit-tab">
+			<!-- 修改用户名 -->
+			<section id="edit-username">
+				<form action="/editusername" method='POST'>
+					用户名：<input type="text" name='username' required><br/>
+					座右铭：<input type="text" name='motto' required><br/>
+					<input type="submit" value='确认修改'>
+				</form>
+			</section>
+			<!-- 修改密码 -->
+			<section id="edit-password">
+				<form action="/editpassword" method='POST'>
+					旧的密码：<input type="password" name='old-password' placeholder='旧密码' required><br/>
+					新的密码：<input type="password" name='new-password' placeholder='新密码' required><br/>
+					重复密码：<input type="password" name='re-new-password' placeholder='重复密码' required><br/>
+					<input type="submit" value='确认修改'>
+				</form>
+			</section>
+
+			<section id="edit-header">
+				<div >
+					当前头像
+					<img class='old-header' src="images/header.jpg" alt="">
+				</div>
+
+
+				<form action="/updateheader" method='POST'>
+					<input type="file" name='header'>
+					<input type="submit" value='上传'>
+				</form>
+			</section>
+
+		</section>
+	</section>
+	<footer>
+		<p>自豪的采用nodejs</p>
+	</footer>
+</body>
+</html>

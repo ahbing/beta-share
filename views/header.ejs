@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ß-house 分享知识 一起进步</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <script src='/javascripts/main.js'></script>
+</head>
+<body>
+  <header>
+    <span class="header-left">
+      <a href="/"><img class='logo' src="/images/logo.png" alt="logo"></a>
+    </span>
+    <span class='header-right'>
+      <% if(user.name){ %>
+        <a id='header-person' class="username" href="javasctipt:0;"><%= user.name %></a>
+        <nav id='header-nav'>
+          <ul>
+            <li><a href="/person/<%= user._id %>">个人中心</a></li>
+            <li><a href="/editinfo/<%= user._id %>">修改信息</a></li>
+            <% if(user.root == 1){ %>
+              <li><a href="/post/<%= user._id %>">发表文章</a></li>
+            <% }else{ %>
+              <li><a href="/sendAct/<%= user._id%>">工作室邮箱验证</a></li>
+            <%}%>
+            <li><a href="/logout">登出</a></li>
+          </ul>
+        </nav>
+      <% }else{ %>
+        <a id='showreg' class='reg' href="/reg">注册</a>
+        <a id='showlogin' class='login' href="/login">登录</a>
+      <% } %>
+    </span>
+  </header>
+
+<% if (success) { %>
+  <div id='suc-flash' class="flash-info"><%= success %></div>
+<% } %>
+<% if (error) { %>
+  <div id="err-flash"  class='flash-info'><%= error %> </div>
+<% } %>

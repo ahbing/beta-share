@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ß-house 分享知识 一起进步</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src='js/main.js'></script>
+</head>
+<body>
+	<header>
+		<span class="header-left">
+			<a href="/"><img class='logo' src="images/logo.png" alt="logo"></a>
+		</span>
+		<span class='header-right'>
+			<a class='reg' href="/reg">注册</a>
+			<a class='login' href="/login">登录</a>
+
+ 			<!-- <a id='header-person' class="username" href="/person">ahbing</a> -->
+ 			<nav>
+				<ul>
+					<li><a href="/person">个人中心</a></li>
+					<li><a href="/edit">修改信息</a></li>
+					<li><a href="/logout">登出</a></li>
+				</ul>
+			</nav>
+		</span>
+	</header>
+
+	<section class='page'>
+		<aside class="page-left">
+			<a href="#">
+				<img class='page-header' src="images/header.jpg" alt="header">
+			</a>
+			<p class='page-name'>
+				<a href="/">
+					ahbing
+				</a>
+			</p>
+		</aside>
+
+		<article class="page-right">
+			<div class="page-title">
+				<h1 class='title'>hello world</h1>
+				<span class="editpage"><a href="/editpage">编辑</a></span>
+			</div>
+
+			<p class="content">
+				hello world! hello world! hello world! hello world!hello world! hello world! hello world! hello world!hello world! hello world! hello world! hello world!hello world!hello world! hello world! hello world! hello world!hello world! hello world! hello world! hello world!hello world!hello world! hello world! hello world! hello world!hello world! hello world! hello world! hello world!hello world!hello world! hello world! hello world! hello world!hello world! hello world! hello world! hello world!hello world!hello world! hello world! hello world! hello world!hello world! hello world! hello world! hello world!hello world!hello world! hello world! hello world! hello world!hello world! hello world! hello world! hello world!hello world!hello world! hello world! hello world! hello world!hello world! hello world! hello world! hello world!hello world!hello world! hello world! hello world! hello world!hello world! hello world! hello world! hello world!hello world!hello world! hello world! hello world! hello world!hello world! hello world! hello world! hello world!hello world!hello world! hello world! hello world! hello world!hello world! hello world! hello world! hello world!hello world!hello world! hello world! hello world! hello world!hello world! hello world! hello world! hello world!hello world!hello world! hello world! hello world! hello world!hello world! hello world! hello world! hello world!hello world!hello world! hello world! hello world! hello world!hello world! hello world! hello world! hello world!hello world!hello world! hello world! hello world! hello world!hello world! hello world! hello world! hello world!
+			</p>
+
+			<section class='comment'>
+				<form action="/comment" method='POST'>
+					<textarea name="comment" cols='70' rows="4" required></textarea><br/><br/>
+					<input type="submit" value='评论'>
+				</form>
+				<ul class='comment-list'>
+					<li><!-- 没一条评论都有一个独立id -->
+						<span class='comment-user'>
+							<a href="#">
+								<img class='comment-header' src="images/header.jpg" alt="用户头像">
+							</a>
+						</span>
+						<span class='comment-value'>
+								世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！
+								<a href="#" class="comment-reply">回复</a>
+								<form action="/reply" method='POST'>
+									<textarea name="reply" cols='60' rows="4" required></textarea><br/>
+									<input type="submit" value='回复'>
+								</form>
+
+						</span>
+					</li>
+					<li><!-- 没一条评论都有一个独立id -->
+						<span class='comment-user'>
+							<a href="#">
+								<img class='comment-header' src="images/header.jpg" alt="用户头像">
+							</a>
+						</span>
+						<span class='comment-value'>
+								世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！
+								<a href="#" class="comment-reply">回复</a>
+								<div class="reply-value">
+									<span class='comment-user'>
+										<a href="#">
+											<img class='comment-header' src="images/header.jpg" alt="用户头像">
+										</a>
+									</span>
+									<span class='comment-value'>
+											世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！
+											<a href="#" class="comment-reply">回复</a>
+											<div class="reply-value">
+												<span class='comment-user'>
+													<a href="#">
+														<img class='comment-header' src="images/header.jpg" alt="用户头像">
+													</a>
+												</span>
+												<span class='comment-value'>
+														世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！
+														<a href="#" class="comment-reply">回复</a>
+												</span>
+											</div>
+									</span>
+								</div>
+						</span>
+					</li>
+					<li><!-- 没一条评论都有一个独立id -->
+						<span class='comment-user'>
+							<a href="#">
+								<img class='comment-header' src="images/header.jpg" alt="用户头像">
+							</a>
+						</span>
+						<span class='comment-value'>
+								世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！世界，你好！
+								<a href="#" class="comment-reply">回复</a>
+						</span>
+					</li>
+				</ul>
+			</section>
+		</article>
+
+	</section>
+
+	<footer>
+		<p>自豪的采用nodejs</p>
+	</footer>
+</body>
+</html>

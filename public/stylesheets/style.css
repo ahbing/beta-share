@@ -1,0 +1,531 @@
+/*暂时先这个去样式*/
+/**{
+	padding: 0;
+	margin: 0;
+}*/
+
+html, body, dl, dd, dt,
+ul, ol, li,
+pre, code,
+form,input, div{
+  margin: 0;
+  padding: 0;
+}
+html,body{
+	height: 100%;
+}
+
+.body-bg{
+	background-color:rgba(0,0,0,.5);
+}
+nav ul{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+	color: #000;
+}
+a:hover{
+	color: #999;
+}
+
+header{
+	width: 100%;
+	height: 80px;
+}
+
+h1{
+	font-size: 1.9em;
+}
+.header-left{
+		width: 10%;
+		float: left;
+		margin-top: 10px;
+		margin-left: 14%;
+}
+
+.logo{
+	width: 100%;
+	height: auto;
+}
+
+.header-right{
+	float: right;
+	margin-right: 16%;
+	width: 14%;
+	height: auto;
+}
+
+.reg,
+.login{
+	float: left;
+	padding: 18% 16%;
+}
+
+.username{
+	float: left;
+	padding: 18% 34%;
+	position: relative;
+}
+
+.reg:hover,
+.login:hover,
+.username:hover{
+	/*background-color: #FFFFCC;*/
+}
+
+.header-right nav{
+	/*margin-top: 2px;*/
+	float: left;
+	display: none;
+	width: 12%;
+	position: absolute;
+	left: 56.6em;
+	top:4.8em;
+	z-index: 99;
+	background-color: #fff;
+	border-radius: .4em;
+	padding: .6em 0;
+	text-align: center;
+}
+
+.header-right nav a{
+	/*float: left;*/
+	display: inline-block;
+	width: 90%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+
+.header-right nav a:hover{
+	background-color:rgba(0,0,0,.5);
+	color: #fff;
+	border-radius: .4em;
+}
+
+.main{
+	width: 80%;
+	margin: 0 auto;
+	height: auto;
+	position: relative;
+	min-height: 30em;
+}
+
+
+.main section{
+	padding-top: 40px;
+	width: 100%;
+	overflow: hidden;/*清浮动*/
+
+}
+
+.page{
+	padding-top: 40px;
+	width:90%;
+	overflow: hidden;/*清浮动*/
+	margin: 0 auto;
+	min-height: 460px;
+}
+
+.img-list{
+	width: 80%;
+	/*margin-left: 2%;*/
+	margin-top: 2em;
+	max-height:26em;
+	border: .4em solid #ccc;
+	border-radius: 2px;
+	overflow: auto;
+	padding: 0 1em 1em 1em;
+
+}
+
+.img-list li{
+	margin-top:1em;
+}
+.img-list img{
+	width: 100%;
+	cursor: pointer;
+}
+
+
+/*注册 登录*/
+.reg-tab,
+.login-tab{
+	background-color: #fff;
+	position: absolute;
+	left: 29%;
+	top: 4em;
+	width: 30%;
+	border: 1px solid #000;
+	padding:2em 6% 3em 6%;
+	display: none;
+	z-index: 99;
+}
+
+.reg-tab input,
+.login-tab input{
+	padding: .4em 0 .4em .2em;
+	margin: .8em 0 .4em 0;
+	width:100%;
+}
+
+.reg-tab h2,
+.login-tab h2{
+	padding-bottom: .4em;
+	color: #0066CC;
+}
+
+.email-info,
+.remember-psw{
+	font-size: .9em;
+	color: #0099FF;
+}
+
+.email-info{
+	/*display: none;*/
+}
+
+.toLogin,
+.forgetPsw{
+	float: right;
+	font-size: .8em;
+	color: #0099FF;
+	cursor: pointer;
+	margin-top: 1em;
+}
+
+.checkbox{
+	width: 20%;
+}
+form p{
+	font-size: .8em;
+	color: #FF0033;
+	/*display: none;*/
+}
+.main-left,
+.page-left{
+	text-align: center;
+	float: left;
+	width: 28%;
+}
+
+.main-header,
+.page-header,
+.comment-header{
+	width: 78%;
+	border-radius: 60%;
+	height: auto;
+}
+
+.page-title,
+.main-title{
+	width: 100%;
+	overflow: hidden;
+}
+
+.main-name,
+.page-name{
+	margin:1.2em;
+}
+
+.main-right,
+.page-right{
+	float: right;
+	width: 68%;
+
+}
+.page-right img,
+.main-right img{
+	width: 90%;
+	height: auto;
+}
+.reg-tab p,
+.login-tab p{
+	display: none;
+}
+
+.editpage{
+	float: right;
+	margin-right: 18%;
+	margin-top: 2.4em;
+}
+.editpage a{
+	color: #999;
+}
+.editpage a:hover{
+	color: #666;
+}
+
+.title{
+	float: left;
+	font-size: 2.4em;
+	padding: .6em 0;
+	font-weight: normal;
+}
+
+.content{
+	width: 70%;
+	/*background-color: red;*/
+}
+
+.comment{
+	width: 90%;
+	margin-top: 4em;
+}
+
+.comment textarea{
+	padding:.2em .6em .2em .6em;
+	font-size: 1em;
+}
+
+.comment-list{
+	width: 100%;
+	margin-top: 2em;
+}
+
+.comment-list li{
+	overflow: hidden;
+	margin-top: 2em;
+}
+
+.comment-user{
+	float: left;
+	width: 8%;
+}
+
+
+.comment-value{
+	float: right;
+	width:88%;
+}
+
+.comment-reply{
+	margin: 1em 2em 0 0;
+	float: right;
+	color: #999;
+}
+
+.comment-reply:hover{
+	color: #666;
+}
+
+.reply-value{
+	overflow: hidden;
+	margin-top: 1.2em;
+}
+
+.upload-files{
+	float: left;
+	width: 18%;
+}
+
+.upload-post{
+	float: right;
+	width: 78%;
+}
+.post-title{
+	width: 80%;
+	padding:.4em 0 .4em .6em;
+	font-size: 1.4em;
+}
+.post-cont{
+	font-size: 1.2em;
+	padding: 0;
+	overflow: visible;
+}
+
+.user-show{
+	width: 100%;
+	height: 24em;
+	position: absolute;
+}
+.bg{
+	width: 100%;
+	height: 100%;
+}
+.edit-bg{
+	position: absolute;
+	right: 12%;
+	top: 12%;
+	color: #fff;
+	background-color: rgba(0,0,0,.8);
+	padding: .8em;
+	border-radius: .6em;
+}
+
+.user-header{
+	position: absolute;
+	left: 6%;
+	bottom:2%;
+	width: 18%;
+	height: auto;
+	border-radius: 2em;
+}
+
+.user-motto{
+	min-width: 60%;
+	position: absolute;
+	left: 26%;
+	bottom: 2%;
+	padding:1em 1.2em;
+	color: #fff;
+	border-radius: .6em;
+	font-size: 1.2em;
+	background-color: rgba(0,0,0,.7);
+}
+
+.user-post{
+	min-height: 20em;
+	width: 70%;
+	margin:0 auto;
+	margin-top: 26em;
+}
+
+.recent-share{
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: .6em;
+	margin-bottom: 1em;
+	font-size: 1.2em;
+}
+
+.post-list{
+	width: 100%;
+}
+.post-list li{
+	padding: 1em .8em;
+}
+.post-date{
+	margin-right: 2em;
+}
+.post-title a{
+	color: #000;
+	font-size: 1.6em;
+}
+
+.post-title a:hover{
+	color: #666;
+}
+
+
+/*编辑信息*/
+.edit-info{
+	width: 60%;
+	overflow: hidden;
+	min-height: 32em;
+	position:relative;
+	left: 20%;
+	top: 4em;
+	/*background-color: red;*/
+}
+
+.edit-info nav{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 12%;
+}
+
+.edit-info nav li{
+	border-bottom: 1px solid #ccc;
+}
+.edit-info nav a{
+	display: block;
+	padding: 0.4em 0;
+	width: 100%;
+	height: 100%;
+}
+/*.edit-info nav a:hover{
+	background-color: #CCCC99;
+}*/
+
+
+.edit-tab{
+	position: absolute;
+	left: 32%;
+	top: 0;
+	width: 60%;
+}
+
+.edit-tab section{
+	width: 100%;
+	height: 100%;
+	/*background-color: red*/
+	position: absolute;
+	left: 0;
+	top:0;
+}
+.edit-tab input{
+	width: 60%;
+	margin-bottom:2em;
+	padding: .4em 0 .4em .6em;
+	border-radius: .4em;
+	font-size: 1em;
+}
+.edit-tab input[type='submit']{
+	margin-left:7em;
+	width: 40%;
+	cursor:pointer;
+}
+.edit-tab p{
+	display: none;
+}
+.old-header{
+	width: 40%;
+}
+.paging{
+	width: 40%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.prev{
+	float: left;
+}
+.next{
+	float: right;
+}
+
+.prev,
+.next{
+	padding:1em 2em;
+}
+
+.prev:hover,
+.next:hover{
+	background-color: rgba(0,0,0,.5);
+	color: #fff;
+}
+.flash-info{
+	width: 96%;
+	position: absolute;
+	left:2%;
+	top: .4em;
+	padding:1em 0;
+	border-radius: .4em;
+	background-color: rgba(0,0,0,.8);
+	color: #fff;
+	text-align: center;
+	z-index: 999;
+}
+
+footer{
+	/*padding: 6em;*/
+	width: 100%;
+	padding:2em 0;
+}
+
+footer p{
+	width: 100%;
+	text-align: center;
+	padding:1em 0;
+}
+
+
+
+
+
+
+
+

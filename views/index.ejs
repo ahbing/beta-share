@@ -1,0 +1,38 @@
+<%- include header %>
+ <section class="main">
+  <%- include reg %>
+  <%- include login %>
+
+      <% posts.forEach(function(post){ %>
+        <section>
+          <div class="main-left">
+            <a href="/person/<%- post.userId%>">
+              <img class="main-header" src="<%- post.author.header %>" alt="header">
+            </a>
+            <p class='main-name'>
+              <a  href="/person/<%- post.userId%>">
+                <%- post.author.name%>
+              </a>
+            </p>
+          </div>
+          <div class="main-right">
+            <div class="main-title">
+              <a href="/page/<%- post._id %>">
+                <h1 class='title'><%- post.title %></h1>
+              </a>
+             <!--  <%- post.time.day %>
+              <%- post.time.minute %> -->
+            </div>
+
+            <p class="content">
+             <%- post.content %>
+            </p>
+            <!-- <p class="index-pv">访问量:<%- post.pv%></p> -->
+          </div>
+        </section>
+      <% }) %>
+
+
+</section>
+<%- include paging %>
+<%- include footer %>

@@ -1,0 +1,38 @@
+<%- include header %>
+<% if (imgSrc) { %>
+  <div class='flash-info'>复制一下内容插入文章，即可插入刚才上传的图片<br/><br/>![](<%= imgSrc %>)</div>
+<% } %>
+
+  <section class="page">
+    <aside class="upload-files">
+
+      <!-- 上传图片 -->
+      <!-- ajax 读取图片 -->
+      <!-- 显示缩略图 -->
+      <form action="/postimg/<%- user._id%>" method="POST" multiple enctype='multipart/form-data'>
+        <input id='post-inputImg' type="file" name='img' ><br>
+        <p>预览图片正确，请上传后再使用</p>
+         <input type="submit" value='上传最新预览的图片'/>
+      </form>
+      <nav class="img-list">
+        <ul id='post-imgList'>
+
+        </ul>
+      </nav>
+
+    </aside>
+
+    <article class="upload-post">
+      <form action="/post/<%= user._id%>" method='POST'>
+        <input class='post-title' type="text" name='title' placeholder='文章标题' required><br/>
+        <p>建议先在其他markdown编辑器编辑,再复制进来,这块要做优化？一起来？:) </p>
+        <P>请去掉markdown语法符号前的空格&nbsp;&nbsp;<a href="http://www.jianshu.com/p/q81RER">快速markdown使用文档</a></P>
+        <textarea id="postarea" name="content" class="post-cont" cols="78" rows="26">
+        </textarea><br/>
+        <input type="hidden" name='userId' value="<%= user._id%>">
+        <input type="submit" value='发表'>
+      </form>
+    </article>
+  </section>
+
+<%- include footer %>

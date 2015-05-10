@@ -1,0 +1,21 @@
+    <!-- 注册表单 -->
+    <div id='reg-box' class="reg-tab">
+      <h2>在 ß分享 注册帐号</h2>
+      <span class='email-info'>使用ß-house工作室邮箱，验证可获得最高权限</span>
+      <form action='/' method='POST'>
+        <input id='reg-email' type="email" placeholder='email' name='email' required>
+        <p>请输入正确的邮箱格式</p>
+        <input id='reg-name' type="text" placeholder='用户名' name='name' required>
+        <p>请输入英文或中文的用户名<p>
+        <div><input id='reg-psw' type="password" placeholder='密码' name='password' required>
+        <p>密码长度不低于6位</p></div>
+        <input id='reg-repsw' type="password" placeholder='重复密码' name='re-password' required>
+        <p>两次输入密码不一致<p>
+        <div><input type="url" id='reg-url' name='url' placeholder='http://个人url'>
+        <p>请输入正确格式的url</p></div>
+        <div><input id='reg-btn' type="submit" value='注册'/></div>
+      </form>
+      <div class="info">
+        <span id='tologin' class='toLogin'>已有帐号，直接登录</span>
+      </div>
+    </div>

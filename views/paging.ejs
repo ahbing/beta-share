@@ -1,0 +1,8 @@
+<section class="paging">
+	<% if(!isFirstPage){ %>
+	<a class="prev" href="?p=<%= page-1 %>">上一页</a>
+	<% }%>
+	<% if(!isLastPage){ %>
+	<a class='next' href="?p=<%= page+1 %>">下一页</a>
+	<% }%>
+</section>

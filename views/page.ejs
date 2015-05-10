@@ -1,0 +1,31 @@
+<%- include header %>
+  <%- include reg %>
+  <%- include login %>
+  <section class='page'>
+    <aside class="page-left">
+      <a href="/person/<%= author._id%>">
+        <img class='page-header' src="<%= author.header %>" alt="header">
+      </a>
+      <p class='page-name'>
+        <a href="/person/<%=author._id%>">
+          <%= author.name %>
+        </a>
+      </p>
+    </aside>
+
+    <article class="page-right">
+      <div class="page-title">
+        <h1 class='title'><%= post.title %></h1>
+        <%if(user.name == author.name){ %>
+          <span class="editpage"><a href="/editpage/<%- post._id%>">编辑</a></span>
+        <% } %>
+      </div>
+      <p class="content">
+        <%- post.content %>
+      </p>
+      <p class="page-pv">访问量:<%- post.pv%></p>
+    </article>
+
+  </section>
+
+<%- include footer %>
