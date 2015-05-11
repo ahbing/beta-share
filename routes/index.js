@@ -70,6 +70,7 @@ router.post('/',function(req,res){
 		User.find({email:email},function(err,theUser){
 			if(err){
 				req.flash('error',err);
+				console.log(err);
 				return res.redirect('/');
 			}
 			if(theUser.length !== 0){
@@ -80,6 +81,7 @@ router.post('/',function(req,res){
 			user.addUser(newuser,function(err,user){
 				if(err){
 					req.flash('error',err);
+					console.log(err);
 					return res.redirect('/');
 				}
 				//注册之后直接登录
@@ -106,6 +108,7 @@ router.post('/',function(req,res){
 		User.find({email:email},function(err,theUser){
 			if(err){
 				req.flash('error',err);
+					console.log(err);
 				return res.redirect('/');
 			}
 			if(theUser.length !== 0){
@@ -141,11 +144,13 @@ router.get('/person/:userId',function(req,res){
 	User.find({_id:userId},function(err,theUser){
 		if(err){
 			req.flash('error',err);
+					console.log(err);
 			return res.redirect('back');
 		}
 		Post.find({userId:userId}).sort({time:-1}).exec(function(err,posts){
 			if(err){
 				req.flash('error',err);
+					console.log(err);
 				return res.redirect('back');
 			}
 			posts.forEach(function(post){
@@ -164,13 +169,14 @@ router.get('/person/:userId',function(req,res){
 });
 router.post('/person',checkLogin);
 router.post('/person',function(req,res){
-	console.log(req.body.imgSrc);
-	console.log(req.body.userId);
+	//console.log(req.body.imgSrc);
+	//console.log(req.body.userId);
 	var src = req.body.imgSrc;
 	var userId = req.body.userId;
 	User.update({_id:userId},{$set:{bg:src}},{multi:false},function(err){
 		if(err){
 			req.flash('error','错误了阿');
+					console.log(err);
 			return res.redirect('back');
 		}
 		req.flash('success','修改背景成功');
@@ -187,6 +193,7 @@ router.get('/editinfo/:userId',function(req,res){
 	User.find({_id:userId},function(err,theUser){
 		if(err){
 			req.flash('error',err);
+					console.log(err);
 			return res.redirect('back');
 		}
 		res.render('editinfo',{
@@ -214,6 +221,8 @@ router.post('/editusername/:userId',function(req,res){
 	User.update(query,update,options,function(err){
 		if(err){
 			req.flash('error',err);
+					console.log(err);
+					console.log(err);
 			return res.redirect('back');
 		}
 		req.session.user.name = name;
@@ -242,6 +251,7 @@ router.post('/editpassword/:userId',function(req,res){
 	User.find({_id:userId},function(err,user){
 		if(err){
 			req.flash('error',err);
+					console.log(err);
 			return res.redirect('back');
 		}
 		var user = user[0];
@@ -257,6 +267,7 @@ router.post('/editpassword/:userId',function(req,res){
 				User.update(query,update,options,function(err){
 					if(err){
 						req.flash('error',err);
+					console.log(err);
 						return res.redirect('back');
 					}
 					req.flash('success','密码修改成功');
@@ -265,6 +276,7 @@ router.post('/editpassword/:userId',function(req,res){
 			}else{
 				//输入新密码不一致
 				req.flash('error',err);
+					console.log(err);
 				return res.redirect('back');
 			}
 		}
@@ -292,6 +304,7 @@ router.post('/updateheader/:userId',function(req,res){
 		User.update(query,update,options,function(err){
 			if(err){
 				req.flash('error',err);
+					console.log(err);
 				return res.redirect('back');
 			}
 			// console.log(req.session.user);
@@ -395,6 +408,7 @@ router.get('/page/:postId',function(req,res){
 	Post.find({_id:postId},function(err,post){
 		if(err){
 			res.flash('error',err);
+					console.log(err);
 			return res.redirect('back');
 		}
 		post = post[0];
@@ -615,7 +629,7 @@ function active(email,userId,acCode,req,res){
 	    from: 'hr@betahouse.us',
 	    to: email ,
 	    subject: 'beta-分享 验证注册邮箱',
-	    html: '<a href="https://ancient-hollows-3887.herokuapp.com//active/'+userId+'/'+acCode+'">点此激活你在 beta-分享 的账户</a> <br/><br/><br/>beta-分享  小组  <br/>敬上'
+	    html: '<a href="https://sharebeta.herokuapp.com/active/'+userId+'/'+acCode+'">点此激活你在 beta-分享 的账户</a> <br/><br/><br/>beta-分享  小组  <br/>敬上'
 	};
 	transporter.sendMail(mailOptions, function(err, info){
     if(err){
