@@ -545,7 +545,7 @@ router.get('/active/:userId/:acCode',checkLogin);
 router.get('/active/:userId/:acCode',function(req,res){
 	var userId = req.params.userId,
 			acCode = req.params.acCode;
-			// console.log(userId+'...'+acCode);
+			console.log(userId+'...'+acCode);
 	User.find({_id:userId},function(err,user){
 		user = user[0];
 		var theCode = user.password.slice(0,6);
@@ -555,18 +555,20 @@ router.get('/active/:userId/:acCode',function(req,res){
 					updateRoot = {root:1};
 			User.update(query,{$set:updateRoot},{multi:false},function(err){
 				if(err){
-					req.flash('error',err);
+					req.flash('error','验证失败，请稍后重试');
 					return res.redirect('back');
 				}
 				var root = 1;
 				// console.log('root'+req.session.user.root);
 				req.session.user.root = 1;
 				//console.log(req.session.user.root == 'undefiend');
-				res.render('actived',{
-					 user:req.session.user,
-					 success:req.flash('success').toString(),
-					 error:req.flash('error').toString()
-				});
+				// res.render('actived',{
+				// 	 user:req.session.user,
+				// 	 success:req.flash('success').toString(),
+				// 	 error:req.flash('error').toString()
+				// });
+				req.flash('success','验证成功了，欢迎你呀！');
+				res.redirect('/');
 			});
 		}else{
 			req.flash('error','该邮箱暂不允许验证，如果你有文章想要发表，请与betahouse联系');
@@ -629,7 +631,7 @@ function active(email,userId,acCode,req,res){
 	    from: 'hr@betahouse.us',
 	    to: email ,
 	    subject: 'beta-分享 验证注册邮箱',
-	    html: '<a href="https://sharebeta.herokuapp.com/active/'+userId+'/'+acCode+'">点此激活你在 beta-分享 的账户</a> <br/><br/><br/>beta-分享  小组  <br/>敬上'
+	    html: '<a href="https://sharebeta.herokuapp.com/'+userId+'/'+acCode+'">点此激活你在 beta-分享 的账户</a> <br/><br/><br/>beta-分享  小组  <br/>敬上'
 	};
 	transporter.sendMail(mailOptions, function(err, info){
     if(err){
