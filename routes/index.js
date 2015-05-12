@@ -286,11 +286,12 @@ router.post('/editpassword/:userId',function(req,res){
 router.post('/updateheader/:userId',checkLogin);
 router.post('/updateheader/:userId',function(req,res){
 	var userId = req.params.userId;
+	console.log('用户id'+userId);
 	// console.log(userId);
 	//文件上传路径
 	var tmp_path = req.files.header.path;
 	var target_path = './public/images/userheader/'+req.files.header.name;
-	var header = '/images/userheader/'+req.files.header.name;
+
 	// console.log(header);
 	fs.rename(tmp_path,target_path,function(err){
 		if(err){
@@ -298,6 +299,7 @@ router.post('/updateheader/:userId',function(req,res){
 			return res.redirect('back');
 		}
 				// console.log('hello');
+		var header = '/images/userheader/'+req.files.header.name;
 		var query = {_id:userId},
 				update = {$set:{header:header}},
 				options ={multi : false};
@@ -307,9 +309,21 @@ router.post('/updateheader/:userId',function(req,res){
 					console.log(err);
 				return res.redirect('back');
 			}
-			// console.log(req.session.user);
-			req.flash('success','头像修改成功');
-			res.redirect('back');
+
+			Post.update({userId:userId},
+				{$set:{'author.header':header}},
+				{multi:true},function(err){
+					if(err){
+						req.flash('error','posts更新作者头像错误');
+						return res.redirect('back');
+					}
+				//	console.log('头像'+header);
+					//console.log(req.session.user.header);
+					req.session.user.header = header;
+					// console.log(req.session.user.header);
+					req.flash('success','头像修改成功');
+					res.redirect('back');
+				});
 		});
 	});
 	// fs.unlink(tmp_path,function(err){
