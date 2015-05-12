@@ -233,7 +233,8 @@ form p{
 .main-right,
 .page-right{
 	float: right;
-	width: 68%;
+  width: 60%;
+  padding-right: 10%;
 
 }
 .page-right img,
@@ -241,6 +242,26 @@ form p{
 	width: 90%;
 	height: auto;
 }
+
+.page-right p,
+.main-right p{
+	letter-spacing: .05em;
+	line-height:1.4em;
+	padding-left: 1em;
+}
+
+.page-right a,
+.main-right a{
+	color:#FF9933;
+}
+
+
+.page-right blockquote,
+.main-right blockquote{
+	color:#999;
+}
+
+
 .reg-tab p,
 .login-tab p{
 	display: none;
@@ -331,9 +352,10 @@ form p{
 	font-size: 1.4em;
 }
 .post-cont{
-	font-size: 1.2em;
+	font-size: .9em;
 	padding: 0;
 	overflow: visible;
+	line-height: 1.4em;
 }
 
 .user-show{
