@@ -521,14 +521,14 @@ router.post('/editpage/:postId',function(req,res){
 
 router.post('/editimg/:postId',checkLogin);
 router.post('/editimg/:postId',function(req,res){
-	console.log(req.files.img);
-	console.log(req.files);
+	// console.log(req.files.img);
+	// console.log(req.files);
 	var postId = req.params.postId;
-	console.log(postId);
-	var tmp_path = req.files.img.path;
+	// console.log(postId);
+	var tmp_path = './'+req.files.img.path;
 	var target_path = './public/images/post/'+req.files.img.name;
 	var img = '/images/post/'+req.files.img.name;
-	// console.log(img);
+	console.log(img);
 	fs.rename(tmp_path,target_path,function(err){
 		if(err){
 			req.flash('error','文件移动错误,请将这个bug报告给我');
