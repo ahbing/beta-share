@@ -631,7 +631,7 @@ function active(email,userId,acCode,req,res){
 	    from: 'hr@betahouse.us',
 	    to: email ,
 	    subject: 'beta-分享 验证注册邮箱',
-	    html: '<a href="https://betashare.herokuapp.com/'+userId+'/'+acCode+'">点此激活你在 beta-分享 的账户</a> <br/><br/><br/>beta-分享  小组  <br/>敬上'
+	    html: '<a href="https://betashare.herokuapp.com/active/'+userId+'/'+acCode+'">点此激活你在 beta-分享 的账户</a> <br/><br/><br/>beta-分享  小组  <br/>敬上'
 	};
 	transporter.sendMail(mailOptions, function(err, info){
     if(err){
